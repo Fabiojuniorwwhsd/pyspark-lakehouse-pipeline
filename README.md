@@ -39,6 +39,7 @@ Business-ready layer.
 - `src/gold_aggregation.py` -> analytical aggregation logic
 - `configs/config.yaml` -> project configuration
 - `docs/architecture.md` -> architecture overview
+- `docs/input_schema.md` -> expected raw dataset schema
 - `data/raw/` -> input dataset location
 - `data/bronze/` -> raw ingested outputs
 - `data/silver/` -> cleaned and standardized outputs
