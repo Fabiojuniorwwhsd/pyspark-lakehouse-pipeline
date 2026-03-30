@@ -1,0 +1,24 @@
+project_name: pyspark-lakehouse-pipeline
+
+dataset:
+  name: nyc_taxi_trips
+  source_type: public_dataset
+  file_format: parquet
+
+paths:
+  raw_input: data/raw
+  bronze_output: data/bronze
+  silver_output: data/silver
+  gold_output: data/gold
+
+layers:
+  bronze:
+    description: raw ingested data
+  silver:
+    description: cleaned and standardized data
+  gold:
+    description: aggregated business-ready data
+
+pipeline:
+  partition_column: pickup_date
+  write_mode: overwrite
