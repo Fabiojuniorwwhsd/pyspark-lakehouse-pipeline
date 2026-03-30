@@ -34,12 +34,15 @@ Business-ready layer.
 - Supports reporting and downstream consumption
 
 ## Current project structure
-- `src/bronze_ingestion.py` -> raw data ingestion placeholder
-- `src/silver_transformation.py` -> data cleaning and standardization placeholder
-- `src/gold_aggregation.py` -> aggregated output generation placeholder
+- `src/bronze_ingestion.py` -> raw data ingestion with PySpark and config loading
+- `src/silver_transformation.py` -> cleaning and standardization logic
+- `src/gold_aggregation.py` -> analytical aggregation logic
 - `configs/config.yaml` -> project configuration
 - `docs/architecture.md` -> architecture overview
-- `data/` -> storage for raw and processed layers
+- `data/raw/` -> input dataset location
+- `data/bronze/` -> raw ingested outputs
+- `data/silver/` -> cleaned and standardized outputs
+- `data/gold/` -> aggregated analytical outputs
 - `notebooks/` -> optional exploration and testing
 - `tests/` -> future tests and validations
 
@@ -67,23 +70,29 @@ Pipeline settings are centralized in `configs/config.yaml`, including:
 1. Install dependencies:
    `pip install -r requirements.txt`
 
-2. Run the pipeline modules individually:
+2. Place the input dataset in:
+   `data/raw/`
+
+3. Run the pipeline modules in order:
    - `python src/bronze_ingestion.py`
    - `python src/silver_transformation.py`
    - `python src/gold_aggregation.py`
 
 ## Current status
-Project structure initialized with:
-- layered pipeline modules
-- configuration file
+Project currently includes:
+- layered pipeline structure
+- configuration file with paths and settings
 - architecture documentation
-- execution requirements
+- Bronze ingestion script with PySpark and YAML config loading
+- Silver transformation script with basic cleaning logic
+- Gold aggregation script with analytical output generation
+- execution requirements and environment ignore rules
 
-This project is currently in the setup and development phase.
+This project is currently in active development.
 
 ## Next steps
-- connect the real dataset ingestion
-- implement PySpark transformations
-- create Bronze, Silver and Gold outputs
-- add data quality checks
-- include tests and execution examples
+- add a real sample dataset for testing
+- improve Silver transformations with stronger validation rules
+- refine Gold aggregations with more analytical outputs
+- add tests for configuration and pipeline execution
+- document expected input schema
