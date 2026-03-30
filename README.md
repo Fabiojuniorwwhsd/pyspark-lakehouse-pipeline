@@ -40,6 +40,7 @@ Business-ready layer.
 - `configs/config.yaml` -> project configuration
 - `docs/architecture.md` -> architecture overview
 - `docs/input_schema.md` -> expected raw dataset schema
+- `docs/output_examples.md` -> expected outputs for Bronze, Silver and Gold layers
 - `data/raw/` -> input dataset location
 - `data/bronze/` -> raw ingested outputs
 - `data/silver/` -> cleaned and standardized outputs
@@ -58,6 +59,8 @@ Business-ready layer.
 - YAML
 - Pandas
 - Jupyter
+- Pytest
+- GitHub Actions
 
 ## Configuration
 Pipeline settings are centralized in `configs/config.yaml`, including:
@@ -79,14 +82,22 @@ Pipeline settings are centralized in `configs/config.yaml`, including:
    - `python src/silver_transformation.py`
    - `python src/gold_aggregation.py`
 
+4. Run tests:
+   `pytest`
+
 ## Current status
 Project currently includes:
 - layered pipeline structure
 - configuration file with paths and settings
 - architecture documentation
+- raw input documentation
+- expected input schema documentation
+- expected output examples documentation
 - Bronze ingestion script with PySpark and YAML config loading
 - Silver transformation script with basic cleaning logic
 - Gold aggregation script with analytical output generation
+- automated tests for configuration and project structure
+- GitHub Actions workflow for test execution
 - execution requirements and environment ignore rules
 
 This project is currently in active development.
@@ -95,5 +106,5 @@ This project is currently in active development.
 - add a real sample dataset for testing
 - improve Silver transformations with stronger validation rules
 - refine Gold aggregations with more analytical outputs
-- add tests for configuration and pipeline execution
-- document expected input schema
+- add tests for pipeline execution
+- document expected output schema
